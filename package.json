@@ -1,0 +1,106 @@
+{
+  "name": "ghub-manager",
+  "version": "1.2.4",
+  "description": "A comprehensive TypeScript toolkit for managing GitHub repositories, organizations, branches, releases, and workflows programmatically",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./repos": {
+      "import": "./dist/repos/index.mjs",
+      "require": "./dist/repos/index.js",
+      "types": "./dist/repos/index.d.ts"
+    },
+    "./branches": {
+      "import": "./dist/branches/index.mjs",
+      "require": "./dist/branches/index.js",
+      "types": "./dist/branches/index.d.ts"
+    },
+    "./issues": {
+      "import": "./dist/issues/index.mjs",
+      "require": "./dist/issues/index.js",
+      "types": "./dist/issues/index.d.ts"
+    },
+    "./pulls": {
+      "import": "./dist/pulls/index.mjs",
+      "require": "./dist/pulls/index.js",
+      "types": "./dist/pulls/index.d.ts"
+    },
+    "./releases": {
+      "import": "./dist/releases/index.mjs",
+      "require": "./dist/releases/index.js",
+      "types": "./dist/releases/index.d.ts"
+    },
+    "./orgs": {
+      "import": "./dist/orgs/index.mjs",
+      "require": "./dist/orgs/index.js",
+      "types": "./dist/orgs/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "github",
+    "github-api",
+    "repository-management",
+    "git",
+    "octokit",
+    "github-repos",
+    "github-manager",
+    "github-toolkit",
+    "repo-manager",
+    "branch-management",
+    "pull-requests",
+    "issues",
+    "releases",
+    "organizations",
+    "github-workflows",
+    "automation"
+  ],
+  "author": "sleeptok3n",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sleeptok3n/ghub-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sleeptok3n/ghub-manager/issues"
+  },
+  "homepage": "https://github.com/sleeptok3n/ghub-manager#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.2",
+    "@octokit/types": "^12.4.0",
+    "@octokit/webhooks-types": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  }
+}
